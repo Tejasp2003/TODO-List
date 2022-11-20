@@ -9,13 +9,13 @@ const clearAll = document.querySelector(".clear-btn")
 
  filters.forEach(btn=>
   {
-    btn.addEventListener("click", e=>
+    btn.addEventListener("click", ()=>
     {
       document.querySelector("span.active").classList.remove("active");
       btn.classList.add("active")
       showTodos(btn.id)
-    })
-  })
+    });
+  });
 
 function showTodos(filter) {
   let li = "";
@@ -59,7 +59,7 @@ function showMenu(selectedTask) {
     {
       taskMenu.classList.remove("show")
     }
-  })
+  });
 
 }
 clearAll.addEventListener("click", ()=>
@@ -71,13 +71,13 @@ clearAll.addEventListener("click", ()=>
   showTodos();
   
 })
-function deleteTask(deleteId )
+function deleteTask(deleteId, filter)
 { 
   isEditedTask=false;
   //splice is used to add/remove elements from array. 1st parameter shows the index and 2nd paramater shows the amount of elemnts to be add/remove
   todos.splice(deleteId, 1);
   localStorage.setItem("todo-list", JSON.stringify(todos));
-  showTodos(filters);
+  showTodos(filter);
 }
 
 function editTask(taskId, taskName)
