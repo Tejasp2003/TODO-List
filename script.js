@@ -33,7 +33,7 @@ function showTodos(filter) {
           <i onClick = "showMenu(this)" class="uil uil-ellipsis-h"></i>
           <ul class="task-menu">
             <li onClick="editTask(${id}, '${todos.name}')"><i class="uil uil-edit"></i>Edit</li>
-            <li onClick="deleteTask(${id})"><i class="uil uil-trash-alt"></i>Delete</li>
+            <li onClick="deleteTask(${id}),window.location.reload(false)"><i class="uil uil-trash-alt"></i>Delete</li>
           </ul>
         </div>
       </li>
